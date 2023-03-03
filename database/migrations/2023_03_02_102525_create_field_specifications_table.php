@@ -17,6 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('spec_id');
             $table->string('value', 128);
             $table->timestamps();
+
+            $table->foreign('field_id')->references('id')->on('field');
+            $table->foreign('spec_id')->references('id')->on('specifications');
         });
     }
 
