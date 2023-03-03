@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image', 128);
             $table->timestamps();
 
-            $table->foreign('field_id')->references('id')->on('field');
+            $table->foreign('field_id')->references('id')->on('fields');
         });
     }
 

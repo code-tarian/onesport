@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('field', function (Blueprint $table) {
+        Schema::create('fields', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('arena_id');
             $table->string('slug', 150);
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('field');
+        Schema::dropIfExists('fields');
     }
 };

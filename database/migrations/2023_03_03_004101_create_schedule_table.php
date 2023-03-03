@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('field_specifications', function (Blueprint $table) {
+        Schema::create('schedule', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('day_id');
             $table->unsignedBigInteger('field_id');
-            $table->unsignedBigInteger('spec_id');
-            $table->string('value', 128);
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->boolean('active')->default(1);
             $table->timestamps();
 
+            $table->foreign('day_id')->references('id')->on('day');
             $table->foreign('field_id')->references('id')->on('fields');
-            $table->foreign('spec_id')->references('id')->on('specifications');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('field_specifications');
+        Schema::dropIfExists('schedule');
     }
 };
