@@ -13,17 +13,15 @@ return new class extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('arena_id');
-            $table->string('slug', 150);
-            $table->string('field_name', 128);
-            $table->string('field_image', 128);
-            $table->float('rating')->nullable()->default(null);
-            $table->integer('amount_order')->nullable()->default(null);
+            $table->unsignedBigInteger('venue_id');
+            $table->string('slug');
+            $table->string('name');
+            $table->string('image');
             $table->text('description')->nullable()->default(null);
             $table->boolean('active')->default(1);
             $table->timestamps();
 
-            $table->foreign('arena_id')->references('id')->on('arena');
+            $table->foreign('venue_id')->references('id')->on('venues');
         });
     }
 

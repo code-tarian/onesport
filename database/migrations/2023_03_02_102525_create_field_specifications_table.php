@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('field_specifications', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('field_id');
-            $table->unsignedBigInteger('spec_id');
-            $table->string('value', 128);
+            $table->unsignedBigInteger('specification_id');
+            $table->string('value');
             $table->timestamps();
 
             $table->foreign('field_id')->references('id')->on('fields');
-            $table->foreign('spec_id')->references('id')->on('specifications');
+            $table->foreign('specification_id')->references('id')->on('specifications');
         });
     }
 

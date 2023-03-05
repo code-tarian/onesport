@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('schedule', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('day_id');
+            $table->string('day');
             $table->unsignedBigInteger('field_id');
             $table->time('start_time');
             $table->time('end_time');
             $table->boolean('active')->default(1);
             $table->timestamps();
 
-            $table->foreign('day_id')->references('id')->on('day');
             $table->foreign('field_id')->references('id')->on('fields');
         });
     }

@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notification', function (Blueprint $table) {
+        Schema::create('venue_facilities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('message');
-            $table->string('link');
+            $table->unsignedBigInteger('venue_id');
+            $table->unsignedBigInteger('facility_id');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('venue_id')->references('id')->on('venues');
+            $table->foreign('facility_id')->references('id')->on('facilities');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notification');
+        Schema::dropIfExists('venue_facilities');
     }
 };

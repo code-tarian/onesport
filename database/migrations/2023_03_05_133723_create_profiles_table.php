@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('venue_levels', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('level_name');
-            $table->text('description')->nullable()->default(null);
-            $table->boolean('active')->default(1);
+            $table->unsignedBigInteger('user_id');
+            $table->string('image');
+            $table->text('address');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('venue_levels');
+        Schema::dropIfExists('profiles');
     }
 };

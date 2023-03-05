@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('venue', function (Blueprint $table) {
+        Schema::create('venues', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('venue_name', 128);
-            $table->string('contact', 25);
-            $table->string('slug', 150);
-            $table->string('logo', 128)->default('default.png');
-            $table->integer('level_id')->default(1);
-            $table->float('rating')->nullable()->default(null);
+            $table->string('slug');
+            $table->string('name');
+            $table->string('contact');
+            $table->string('logo')->default('default.png');
+            $table->text('address')->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
             $table->boolean('active')->default(1);
             $table->timestamps();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('venue');
+        Schema::dropIfExists('venues');
     }
 };

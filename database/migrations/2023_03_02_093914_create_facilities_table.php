@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
-            $table->string('facility_name', 128);
-            $table->string('icon', 128)->nullable()->default(null);
+            $table->string('name');
+            $table->string('icon')->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
             $table->boolean('active')->default(1);
             $table->timestamps();

@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('specifications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('arena_id');
-            $table->string('spec_name', 128);
+            $table->string('name');
             $table->text('description')->nullable()->default(null);
             $table->boolean('active')->default(1);
             $table->timestamps();
-
-            $table->foreign('arena_id')->references('id')->on('arena');
         });
     }
 
