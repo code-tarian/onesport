@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             SpecificationsSeeder::class,
-            FieldsSeeder::class
+            FieldsSeeder::class,
+            FieldSpecificationsSeeder::class
         ]);
     }
 }
