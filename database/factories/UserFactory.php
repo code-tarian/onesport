@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'address' => fake()->address(),
             'postcode' => fake()->postcode(),
             'latitude' => fake()->latitude(),
-            'longitude' => fake()->longitude(),
+            'longitude' => fake()->longitude()
         ];
     }
 
@@ -43,7 +43,7 @@ class UserFactory extends Factory
     public function unverified(): static
     {
         return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
+            'email_verified_at' => null
         ]);
     }
 }
