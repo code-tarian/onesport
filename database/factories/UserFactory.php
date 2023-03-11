@@ -19,7 +19,7 @@ class UserFactory extends Factory
     {
         $gender = fake()->randomElement(['male', 'female']);
         return [
-            'role_id' => mt_rand(2,3),
+            'role_id' => 3,
             'name' => fake()->name($gender),
             'username' => fake()->userName(),
             'email' => fake()->unique()->safeEmail(),

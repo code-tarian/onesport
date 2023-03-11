@@ -25,14 +25,10 @@ class DatabaseSeeder extends Seeder
             'gender' => 'Laki-laki',
             'city' => 'Tasikmalaya'
         ]);
-        User::factory()->create([
+        User::factory(4)->create([
             'role_id' => 2,
             'city' => 'Tasikmalaya'
         ]);
         User::factory(10)->create();
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
