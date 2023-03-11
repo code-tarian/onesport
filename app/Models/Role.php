@@ -14,4 +14,11 @@ class Role extends Model
         'description',
         'active'
     ];
+
+    protected $guarded = ['id'];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
