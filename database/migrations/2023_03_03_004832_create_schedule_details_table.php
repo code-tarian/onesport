@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedule_detail', function (Blueprint $table) {
+        Schema::create('schedule_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('schedule_id');
             $table->time('start_time');
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->boolean('active')->default(1);
             $table->timestamps();
 
-            $table->foreign('schedule_id')->references('id')->on('schedule');
+            $table->foreign('schedule_id')->references('id')->on('schedules');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedule_detail');
+        Schema::dropIfExists('schedule_details');
     }
 };
