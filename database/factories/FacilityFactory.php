@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Facility>
  */
-class VenueFactory extends Factory
+class FacilityFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +17,8 @@ class VenueFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
-            'slug' => fake()->slug(),
-            'name' => fake()->company() . ' Futsal',
-            'contact' => fake()->phoneNumber(),
-            'logo' => 'default.png',
-            'address' => fake()->address(),
+            'name' => 'facility',
+            'icon' => 'default.svg',
             'description' => fake()->sentence(),
             'active' => fake()->numberBetween(0, 1),
             'created_at' => now(),

@@ -13,7 +13,7 @@ class VenueFacility extends Model
 
     protected $fillable = [
         'venue_id',
-        'facility_id',
+        'facility_id'
     ];
 
     public function venue(): BelongsTo

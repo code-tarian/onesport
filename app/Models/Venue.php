@@ -16,6 +16,7 @@ class Venue extends Model
         'logo',
         'address',
         'description',
+        'active'
     ];
 
     public function owner(): BelongsTo

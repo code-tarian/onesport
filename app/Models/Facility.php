@@ -13,6 +13,6 @@ class Facility extends Model
     'name',
     'icon',
     'description',
-    'active',
+    'active'
   ];
 }
