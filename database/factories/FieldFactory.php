@@ -23,7 +23,7 @@ class FieldFactory extends Factory
         return [
             'venue_id' => fake()->randomElement($venues),
             'slug' => fake()->slug(),
-            'name' => fake()->unique()->safeColorName(),
+            'name' => fake()->colorName(),
             'image' => 'default.png',
             'description' => fake()->sentence(),
             'active' => fake()->numberBetween(0, 1),
