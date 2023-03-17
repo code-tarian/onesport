@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             VenueSeeder::class,
             FieldSeeder::class,
-            // FieldSpecificationSeeder::class
+            FieldSpecificationSeeder::class
             // Schedules
             // Schedule_details
             // Venue_facilities
